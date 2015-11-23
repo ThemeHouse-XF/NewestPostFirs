@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="ThemeHouse_NewestPostFirs" title="[⌂] Newest Post First" version_string="1.0.4" version_id="1447261019" url="http://xf.themehouse.io/" install_callback_class="ThemeHouse_Install" install_callback_method="install" uninstall_callback_class="ThemeHouse_Install" uninstall_callback_method="uninstall">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners>
+    <listener event_id="controller_pre_dispatch" execute_order="10" callback_class="ThemeHouse_Listener_ControllerPreDispatch" callback_method="controllerPreDispatch" active="1" hint="" description=""/>
+    <listener event_id="file_health_check" execute_order="10" callback_class="ThemeHouse_NewestPostFirs_Listener_FileHealthCheck" callback_method="fileHealthCheck" active="1" hint="" description=""/>
+    <listener event_id="init_dependencies" execute_order="10" callback_class="ThemeHouse_Listener_InitDependencies" callback_method="initDependencies" active="1" hint="" description=""/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_NewestPostFirs_Listener_LoadClass" callback_method="loadClassController" active="0" hint="XenForo_ControllerPublic_Account" description="XenForo_ControllerPublic_Account (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_NewestPostFirs_Listener_LoadClass" callback_method="loadClassController" active="0" hint="XenForo_ControllerPublic_Post" description="XenForo_ControllerPublic_Post (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_NewestPostFirs_Listener_LoadClass" callback_method="loadClassController" active="0" hint="XenForo_ControllerPublic_Thread" description="XenForo_ControllerPublic_Thread (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_NewestPostFirs_Listener_LoadClass" callback_method="loadClassDataWriter" active="0" hint="XenForo_DataWriter_User" description="XenForo_DataWriter_User (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_NewestPostFirs_Listener_LoadClass" callback_method="loadClassModel" active="0" hint="XenForo_Model_Post" description="XenForo_Model_Post (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_NewestPostFirs_Listener_LoadClass" callback_method="loadClassModel" active="0" hint="XenForo_Model_Thread" description="XenForo_Model_Thread (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_NewestPostFirs_Listener_LoadClass" callback_method="loadClassView" active="0" hint="XenForo_ViewPublic_Thread_View" description="XenForo_ViewPublic_Thread_View (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class_controller" execute_order="10" callback_class="ThemeHouse_NewestPostFirs_Listener_LoadClass" callback_method="loadClassController" active="1" hint="" description="(For XenForo 1.1 and below)" compatibility_switch="1"/>
+    <listener event_id="load_class_datawriter" execute_order="10" callback_class="ThemeHouse_NewestPostFirs_Listener_LoadClass" callback_method="loadClassDataWriter" active="1" hint="" description="(For XenForo 1.1 and below)" compatibility_switch="1"/>
+    <listener event_id="load_class_model" execute_order="1" callback_class="ThemeHouse_NewestPostFirs_Listener_LoadClass" callback_method="loadClassModel" active="1" hint="" description="(For XenForo 1.1 and below)" compatibility_switch="1"/>
+    <listener event_id="load_class_view" execute_order="10" callback_class="ThemeHouse_NewestPostFirs_Listener_LoadClass" callback_method="loadClassView" active="1" hint="" description="(For XenForo 1.1 and below)" compatibility_switch="1"/>
+    <listener event_id="template_create" execute_order="10" callback_class="ThemeHouse_NewestPostFirs_Listener_TemplateCreate" callback_method="templateCreate" active="1" hint="" description=""/>
+    <listener event_id="template_hook" execute_order="999" callback_class="ThemeHouse_NewestPostFirs_Listener_TemplateHook" callback_method="templateHook" active="1" hint="" description=""/>
+  </code_event_listeners>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups>
+    <group group_id="th_newestPostFirst" display_order="2000" debug_only="0"/>
+    <option option_id="th_newestPostFirst" edit_format="onoff" data_type="boolean" can_backup="1">
+      <default_value>1</default_value>
+      <edit_format_params/>
+      <sub_options/>
+      <relation group_id="th_newestPostFirst" display_order="1"/>
+    </option>
+    <option option_id="th_newestPostFirst_blogStyle" edit_format="onoff" data_type="boolean" can_backup="1">
+      <default_value>0</default_value>
+      <edit_format_params/>
+      <sub_options/>
+      <relation group_id="th_newestPostFirst" display_order="200"/>
+    </option>
+    <option option_id="th_newestPostFirst_moveQuickReply" edit_format="onoff" data_type="boolean" can_backup="1">
+      <default_value>1</default_value>
+      <edit_format_params/>
+      <sub_options/>
+      <relation group_id="th_newestPostFirst" display_order="50"/>
+    </option>
+    <option option_id="th_newestPostFirst_userChoice" edit_format="onoff" data_type="boolean" can_backup="1">
+      <default_value>0</default_value>
+      <edit_format_params/>
+      <sub_options/>
+      <relation group_id="th_newestPostFirst" display_order="100"/>
+    </option>
+  </optiongroups>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases>
+    <phrase title="option_group_th_newestPostFirst" version_id="1343164652" version_string="1.0.0"><![CDATA[Newest Post First by ThemeHouse]]></phrase>
+    <phrase title="option_group_th_newestPostFirst_description" version_id="1343164652" version_string="1.0.0"><![CDATA[Options for the Newest Post First by ThemeHouse add-on.]]></phrase>
+    <phrase title="option_th_newestPostFirst" version_id="1353663146" version_string="1.0.1"><![CDATA[Show newest post first by default]]></phrase>
+    <phrase title="option_th_newestPostFirst_blogStyle" version_id="1353663146" version_string="1.0.1"><![CDATA[Show original post first (blog style)]]></phrase>
+    <phrase title="option_th_newestPostFirst_blogStyle_explain" version_id="1353663146" version_string="1.0.1"><![CDATA[If checked and the option to display newest post first is also selected, this shows the oldest post at the very top, followed by all other posts starting with the newest.]]></phrase>
+    <phrase title="option_th_newestPostFirst_explain" version_id="1370385168" version_string="1.0.2"><![CDATA[Unless selected otherwise, checking this option will order threads in reverse order with the newest post first.]]></phrase>
+    <phrase title="option_th_newestPostFirst_moveQuickReply" version_id="1370385168" version_string="1.0.2"><![CDATA[Move quick reply box to top]]></phrase>
+    <phrase title="option_th_newestPostFirst_moveQuickReply_explain" version_id="1370385168" version_string="1.0.2"><![CDATA[Checking this option will move the quick reply box to the top of the thread if thread is being viewed with newest post first.]]></phrase>
+    <phrase title="option_th_newestPostFirst_userChoice" version_id="1353663146" version_string="1.0.1"><![CDATA[Allow user to choose thread display mode]]></phrase>
+    <phrase title="option_th_newestPostFirst_userChoice_explain" version_id="1353663146" version_string="1.0.1"><![CDATA[Checking this option will add a thread display mode drop-down to the user's preferences screen.]]></phrase>
+    <phrase title="th_newest_post_first_newestpostfirst" version_id="1353663146" version_string="1.0.1"><![CDATA[Newest post first]]></phrase>
+    <phrase title="th_oldest_post_first_newestpostfirst" version_id="1353663146" version_string="1.0.1"><![CDATA[Oldest post first]]></phrase>
+    <phrase title="th_thread_display_mode_newestpostfirst" version_id="1353663146" version_string="1.0.1"><![CDATA[Thread display mode]]></phrase>
+  </phrases>
+  <route_prefixes/>
+  <style_properties/>
+  <templates>
+    <template title="th_account_preferences_newestpostfirst" version_id="1353663146" version_string="1.0.1"><![CDATA[<dl class="ctrlUnit">
+	<dt><label for="ctrl_thread_display_mode">{xen:phrase th_thread_display_mode_newestpostfirst}:</label></dt>
+	<dd>
+		<select name="thread_display_mode" class="textCtrl" id="ctrl_thread_display_mode">
+			<option value="" {xen:selected "'' == {$visitor.thread_display_mode}"}></option>
+			<option value="newest_first" {xen:selected "'newest_first' == {$visitor.thread_display_mode}"}>{xen:phrase th_newest_post_first_newestpostfirst}</option>
+			<option value="oldest_first" {xen:selected "'oldest_first' == {$visitor.thread_display_mode}"}>{xen:phrase th_oldest_post_first_newestpostfirst}</option>
+		</select>
+	</dd>
+</dl>]]></template>
+  </templates>
+  <public_template_modifications>
+    <modification template="footer" modification_key="th_copyrightNotice_newestPostFirs" description="Copyright notice for [⌂] Newest Post First" execution_order="1" enabled="1" action="callback">
+      <find><![CDATA[/{xen:phrase (?:xenforo|extra)_copyright}/]]></find>
+      <replace><![CDATA[ThemeHouse_Listener_InitDependencies::copyrightNotice]]></replace>
+    </modification>
+    <modification template="footer" modification_key="th_copyrightNotice_newestPostFirst" description="Copyright notice for Newest Post First by ThemeHouse" execution_order="1" enabled="1" action="callback">
+      <find><![CDATA[/{xen:phrase (?:xenforo|extra)_copyright}/]]></find>
+      <replace><![CDATA[ThemeHouse_Listener_InitDependencies::copyrightNotice]]></replace>
+    </modification>
+  </public_template_modifications>
+  <bb_code_media_sites/>
+  <bb_codes/>
+</addon>
